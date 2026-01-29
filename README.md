@@ -2,6 +2,8 @@
 
 Hey there, fellow seeker! I'm Mwithiga.
 
+As a Public Relations student, I've seen firsthand how the right connection can change a story. My goal is to improve the world of PR by leveraging code and technology to create faster, smarter ways to connect.
+
 Ever feel the frustration of landing on a website, needing to reach out, but finding yourself trapped in the "hustle" of digging through hidden pages just to find a simple email or contact form? 
 
 I have. And that frustrated seeker moment is exactly why **Dispatch** was born.
