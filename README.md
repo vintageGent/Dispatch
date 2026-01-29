@@ -1,43 +1,46 @@
-# Email Assistant
+# Dispatch
 
 Hey there, fellow seeker! I'm Mwithiga.
 
-In the digital age, finding a point of contact can often feel like searching for a needle in a haystack. I built Email Assistant to streamline the process of discovering and reaching out to the right people. It is a tool designed to close the gap between information discovery and professional communication.
+Ever feel the frustration of landing on a website, needing to reach out, but finding yourself trapped in the "hustle" of digging through hidden pages just to find a simple email or contact form? 
 
-Email Assistant is an automated contact harvesting and AI-assisted drafting tool. It handles the manual labor of scanning web pages—even those with complex, dynamic content—and provides a professional interface to draft and launch inquiries instantly.
+I have. And that frustrated seeker moment is exactly why **Dispatch** was born.
+
+Dispatch is a high-performance connection engine designed to bridge the gap between discovery and action. I wanted a tool that could "see" through the noise—even on complex, JavaScript-heavy sites—and present every available connection point in a clean, actionable format. Whether it is an email, a phone number, a WhatsApp chat, or a social media profile, Dispatch finds it so you can initiate the conversation instantly.
 
 ## The Development Journey
 
-The inspiration for this project came from my own experiences trying to connect with professionals and organizations. Scanning through multiple pages and manually drafting similar emails felt like a missed opportunity for automation.
+Moving beyond a simple email harvester was a deliberate step in architecture. I realized that the "hustle" of contact discovery isn't just about emails; it's about finding the *right* way to connect.
 
-The primary technical challenge was ensuring that the tool could see what a human sees. Many modern websites use JavaScript to hide or render content dynamically. By integrating a headless browser session through `requests-html`, I enabled Email Assistant to render the full state of a page, ensuring that no valid contact is missed.
+The technical challenge was expanding the scope of detection without sacrificing accuracy. I implemented a modular harvesting logic that uses a combination of robust regular expressions for phone numbers and an intelligent link analysis system for social profiles and WhatsApp discovery. By leveraging a headless browser session through `requests-html`, Dispatch renders dynamic content, ensuring no valid contact is left behind.
 
-Once the harvesting was reliable, I focused on the "last mile" of the process: the communication. I wanted to move beyond simple extraction and provide a way to act on the information immediately. This led to the creation of the AI drafting engine and the integration with system-level mail clients, turning a multi-step process into a single, cohesive workflow.
+I also focused on the "how" of communication. I didn't just want to list contacts; I wanted to act on them. This led to the creation of a unified connection menu that adapts to the type of contact found—launching mail clients with AI-drafted content, opening WhatsApp chats, or navigating directly to social profiles.
 
 ## Features
 
-- **Dynamic Harvesting**: Uses a headless browser to extract emails from static and JavaScript-rendered pages.
-- **Rich Interactive UI**: A professional terminal interface powered by the `rich` library.
-- **AI-Assisted Drafting**: Automatically generates professional email drafts based on your specific intent.
-- **One-Click Launch**: Seamlessly opens your default email client with the draft prepared and the recipient set.
+- **Multi-Contact Harvesting**: Automatically extracts emails, phone numbers, social media profiles (Instagram, Twitter, LinkedIn), and WhatsApp links.
+- **Dynamic Content Support**: Executes JavaScript to find contacts that are hidden from static scrapers.
+- **Intelligent Connection Menu**: Automatically chooses the right action (AI drafting for emails, direct links for socials, WhatsApp redirection).
+- **Professional CLI**: A clean, "Rich" terminal experience that keeps the focus on the mission.
 
 ## Getting Started
 
-To begin using Email Assistant, follow these steps to prepare your environment.
+To get a local instance of Dispatch up and running, follow these steps.
 
 ### Prerequisites
 
 - Python 3.x
-- A Linux environment (for `xdg-open` support)
+- A Linux environment (for desktop integration features)
 
 ### Installation
 
-1. Clone the repository (or copy the project files):
+1. Clone the repository:
    ```bash
-   cd email_assistant
+   git clone https://github.com/vintageGent/dispatch.git
+   cd dispatch
    ```
 
-2. Set up the virtual environment:
+2. Setup the virtual environment:
    ```bash
    python3 -m venv venv
    source venv/bin/activate
@@ -46,14 +49,14 @@ To begin using Email Assistant, follow these steps to prepare your environment.
 
 ### Usage
 
-Run the assistant by providing a target URL:
+The simplest way to use Dispatch is to provide a target URL:
 
 ```bash
 python3 main.py https://example.com
 ```
 
-The tool will scan the page, display the discovered contacts, and walk you through the process of selecting a recipient and drafting your message.
+Dispatch will scan the target, present a categorized table of connection points, and allow you to reach out with a single selection.
 
 ## A Personal Connection
 
-Email Assistant is more than just a scraper; it's a productivity companion. It reflects my belief that technology should serve as a bridge to meaningful interaction. For every fellow seeker looking to reach out and make a connection, I hope this tool helps you find your voice.
+Dispatch represents my philosophy that technology should remove barriers, not create them. For every seeker who has ever been stuck behind a "Contact Us" page that leads nowhere, this tool is for you. It turns the "hustle" of searching into the ease of connecting.
