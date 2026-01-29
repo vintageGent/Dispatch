@@ -6,13 +6,13 @@ Ever feel the frustration of landing on a website, needing to reach out, but fin
 
 I have. And that frustrated seeker moment is exactly why **Dispatch** was born.
 
-Dispatch is a high-performance connection engine designed to bridge the gap between discovery and action. I wanted a tool that could "see" through the noise—even on complex, JavaScript-heavy sites—and present every available connection point in a clean, actionable format. Whether it is an email, a phone number, a WhatsApp chat, or a social media profile, Dispatch finds it so you can initiate the conversation instantly.
+Dispatch is a high-performance connection engine designed to bridge the gap between discovery and action. I wanted a tool that could "see" through the noise even on complex, JavaScript heavy sites and present every available connection point in a clean, actionable format. Whether it is an email, a phone number, a WhatsApp chat, or a social media profile, Dispatch finds it so you can initiate the conversation instantly.
 
 ## The Development Journey
 
 Moving beyond a simple email harvester was a deliberate step in architecture. I realized that the "hustle" of contact discovery isn't just about emails; it's about finding the *right* way to connect.
 
-The technical challenge was expanding the scope of detection without sacrificing accuracy. I implemented a modular harvesting logic that uses a combination of robust regular expressions for phone numbers and an intelligent link analysis system for social profiles and WhatsApp discovery. By leveraging a headless browser session through `requests-html`, Dispatch renders dynamic content, ensuring no valid contact is left behind.
+The technical challenge was expanding the scope of detection without sacrificing accuracy. I implemented a modular harvesting logic that uses a combination of robust regular expressions for phone numbers and an intelligent link analysis system for social profiles and WhatsApp discovery. By leveraging a headless browser session through requests-html, Dispatch renders dynamic content, ensuring no valid contact is left behind.
 
 I also focused on the "how" of communication. I didn't just want to list contacts; I wanted to act on them. This led to the creation of a unified connection menu that adapts to the type of contact found—launching mail clients with AI-drafted content, opening WhatsApp chats, or navigating directly to social profiles.
 
