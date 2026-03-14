@@ -1,63 +1,60 @@
-# Dispatch
+# Dispatch: Communications Intelligence Engine 🛡️☎️🔎
 
-Hey there, fellow seeker! I'm Mwithiga.
+Dispatch is a high-authority communications intelligence asset designed to bridge the gap between discovery and strategic action. It transforms contact harvesting into formal intelligence dossiers, ensuring institutional alignment with **DPA Section 25 (Data Protection by Design)**.
 
-As a Public Relations student, I've seen firsthand how the right connection can change a story. My goal is to improve the world of PR by leveraging code and technology to create faster, smarter ways to connect.
+## 💎 High-Authority Features
 
-Ever feel the frustration of landing on a website, needing to reach out, but finding yourself trapped in the "hustle" of digging through hidden pages just to find a simple email or contact form? 
+### 1. Strategic Communications Dossiers
+The engine automatically generates MD-formatted **Strategic Communications Dossiers** for every target. Each dossier provides a technical audit trail of institutional connection points, reducing outreach friction and ensuring data minimization.
 
-I have. And that frustrated seeker moment is exactly why **Dispatch** was born.
+### 2. Domain Pivot Intelligence
+The `recon.py` module allows for deep email-level reconnaissance, pivoting from a single address to a full organizational-level exposure audit.
 
-Dispatch is a high-performance connection engine designed to bridge the gap between discovery and action. I wanted a tool that could "see" through the noise even on complex, JavaScript heavy sites and present every available connection point in a clean, actionable format. Whether it is an email, a phone number, a WhatsApp chat, or a social media profile, Dispatch finds it so you can initiate the conversation instantly.
+### 3. Hardened Intelligence Gathering
+Dispatch uses a headless browser session to render dynamic content, uncovering contacts hidden behind complex JavaScript. It audits a broad range of platforms:
+- **Professional**: LinkedIn, Organization Domains.
+- **Instant Messaging**: WhatsApp, Telegram, Viber.
+- **Modern Social**: Threads, Mastodon, X/Twitter.
 
-## The Development Journey
+## ⚖️ Strategic Alignment
+By identifying verified, institutional connection points and providing "Strategic Inquiry Templates" based on the **What/Why/How** framework, Dispatch ensures that every outreach is standardized, secure, and professional.
 
-Moving beyond a simple email harvester was a deliberate step in architecture. I realized that the "hustle" of contact discovery isn't just about emails; it's about finding the *right* way to connect.
+## 🦾 Technical Capabilities (Zero-Log Architecture)
+- **Headless Rendering**: Powered by `requests-html`.
+- **Dossier Engine**: Automated markdown reporting.
+- **Pivoting Logic**: Seamless transition between individual and organizational recon.
 
-The technical challenge was expanding the scope of detection without sacrificing accuracy. I implemented a modular harvesting logic that uses a combination of robust regular expressions for phone numbers and an intelligent link analysis system for social profiles and WhatsApp discovery. By leveraging a headless browser session through requests-html, Dispatch renders dynamic content, ensuring no valid contact is left behind.
-
-I also focused on the "how" of communication. I didn't just want to list contacts; I wanted to act on them. This led to the creation of a unified connection menu that adapts to the type of contact found—launching mail clients with AI-drafted content, opening WhatsApp chats, or navigating directly to social profiles.
-
-## Features
-
-- **Multi-Contact Harvesting**: Automatically extracts emails, phone numbers, social media profiles (Instagram, Twitter, LinkedIn), and WhatsApp links.
-- **Dynamic Content Support**: Executes JavaScript to find contacts that are hidden from static scrapers.
-- **Intelligent Connection Menu**: Automatically chooses the right action (AI drafting for emails, direct links for socials, WhatsApp redirection).
-- **Professional CLI**: A clean, "Rich" terminal experience that keeps the focus on the mission.
+- **✅ Multi-Contact Harvesting**: Finds Emails, Phones, WhatsApp, Instagram, LinkedIn, and X (Twitter).
+- **✅ Dynamic Scanning**: "Sees" what a human sees (even on complex JavaScript sites).
+- **✅ Actionable Menu**: Don't just copy-paste. Click to launch your email app with a pre-written draft.
+- **✅ Professional CLI**: A clean, "Rich" terminal interface.
 
 ## Getting Started
 
-To get a local instance of Dispatch up and running, follow these steps.
+### 1. Installation
 
-### Prerequisites
+```bash
+# 1. Get the code
+git clone https://github.com/vintageGent/dispatch.git
+cd dispatch
 
-- Python 3.x
-- A Linux environment (for desktop integration features)
+# 2. Setup the environment
+python3 -m venv venv
+source venv/bin/activate
 
-### Installation
+# 3. Install dependencies
+pip install -r requirements.txt
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/vintageGent/dispatch.git
-   cd dispatch
-   ```
+### 2. How to Use
 
-2. Setup the virtual environment:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-
-### Usage
-
-The simplest way to use Dispatch is to provide a target URL:
+Simply run the tool and give it a target website:
 
 ```bash
 python3 main.py https://example.com
 ```
 
-Dispatch will scan the target, present a categorized table of connection points, and allow you to reach out with a single selection.
+**Pro Tip:** You can also just run `python3 main.py` and it will ask you for the URL!
 
 ## A Personal Connection
 

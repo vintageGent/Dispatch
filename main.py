@@ -10,6 +10,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.prompt import Prompt, IntPrompt
+from reporter import generate_strategic_dossier
 
 console = Console()
 
@@ -74,12 +75,18 @@ def harvest_contacts(url):
                 if 9 <= len(clean_p) <= 15: # Standard phone length
                     contacts["phones"].add(p.strip())
             
-            # 3. Social Media & WhatsApp
-            social_domains = ['instagram.com', 'twitter.com', 'x.com', 'facebook.com', 'linkedin.com', 'wa.me', 'whatsapp.com']
+            # 3. Social Media & Messenger Intelligence
+            social_domains = [
+                'instagram.com', 'twitter.com', 'x.com', 'facebook.com', 
+                'linkedin.com', 'wa.me', 'whatsapp.com', 'threads.net', 
+                'mastodon.social', 't.me', 'telegram.me', 'viber.com'
+            ]
             for link in links:
                 if any(domain in link.lower() for domain in social_domains):
                     if 'wa.me' in link.lower() or 'whatsapp.com' in link.lower():
                         contacts["whatsapp"].add(link)
+                    elif 't.me' in link.lower() or 'telegram.me' in link.lower():
+                        contacts["socials"].add(f"[Telegram] {link}")
                     else:
                         contacts["socials"].add(link)
             
@@ -89,17 +96,18 @@ def harvest_contacts(url):
         console.print(f"[bold red]Error during harvesting:[/] {e}")
         return contacts
 
-def generate_email_draft(intent):
-    """Generates a professional email draft based on intent."""
-    subject = f"Inquiry: {intent}"
+def generate_strategic_inquiry(intent, context_url):
+    """Generates a high-authority strategic inquiry draft."""
+    subject = f"Strategic Inquiry | {intent}"
     body = (
-        f"Dear Sir/Madam,\n\n"
-        f"I am writing to you regarding the following: {intent}.\n\n"
-        f"I found your contact information listed on your website and wanted to reach out directly.\n\n"
-        f"Any information or guidance you could provide would be greatly appreciated.\n\n"
-        f"Thank you for your time.\n\n"
-        f"Sincerely,\n\n"
-        f"[Your Name]"
+        f"Dear Communications Team,\n\n"
+        f"I am reaching out on behalf of an intelligence investigation regarding {intent}.\n\n"
+        f"WHAT: Analysis of institutional connection points at {context_url}.\n"
+        f"WHY: To establish a direct, secure line of communication for high-priority risk assessment.\n"
+        f"HOW: Requesting verification of this contact as the primary point for strategic advisory.\n\n"
+        f"Your prompt response ensures alignment with standardized institutional engagement protocols.\n\n"
+        f"Regards,\n\n"
+        f"[MWITHIGA LABS | DIGITAL RISK ASSURANCE]"
     )
     return subject, body
 
@@ -117,6 +125,9 @@ def main():
         url = 'https://' + url
 
     results = harvest_contacts(url)
+    
+    # Generate Strategic Communications Dossier
+    generate_strategic_dossier(url, results)
     
     # Flatten results for selection
     all_contacts = []
@@ -161,8 +172,8 @@ def main():
     console.print(f"\n[bold green]Connecting via {selection['type']}...[/]")
 
     if selection['type'] == 'email':
-        intent = Prompt.ask("\nWhat is the purpose of this email?", default="Business Inquiry")
-        subject, body = generate_email_draft(intent)
+        intent = Prompt.ask("\nWhat is the strategic purpose of this inquiry?", default="Institutional Engagement")
+        subject, body = generate_strategic_inquiry(intent, url)
         
         draft_panel = Panel(f"[bold blue]Subject:[/] {subject}\n---\n{body}", title="Draft Inquiry", border_style="green")
         console.print(draft_panel)
